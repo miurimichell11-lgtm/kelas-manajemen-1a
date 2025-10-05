@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas MANAJEMEN 1A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-active {
+            background-color: #059669; /* emerald-600 */
+            color: white;
+        }
+        .tab-inactive {
+            background-color: #D1FAE5; /* emerald-100 */
+            color: #065F46; /* emerald-800 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl md:text-2xl font-extrabold text-slate-800">MANAJEMEN 1A</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#tentang" class="text-slate-600 hover:text-emerald-600 transition duration-300 font-medium">Tentang Kami</a>
+                <a href="#jadwal" class="text-slate-600 hover:text-emerald-600 transition duration-300 font-medium">Jadwal</a>
+                <a href="#galeri" class="text-slate-600 hover:text-emerald-600 transition duration-300 font-medium">Galeri</a>
+            </div>
+            <a href="anggota.html" class="bg-emerald-600 text-white py-2 px-5 rounded-full hover:bg-emerald-700 transition duration-300 shadow-sm hover:shadow-md text-sm font-semibold">
+                Daftar Anggota
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <p class="mb-2 text-slate-600 font-medium">Selamat Datang di Ruang Digital Kami!</p>
+                        <div class="flex flex-col">
+                             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-800 leading-tight">
+                                <span class="text-emerald-600">SATU KELAS, SEJUTA CERITA...</span>
+                            </h1>
+                             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-700 mt-2">
+                                MANAJEMEN 1A
+                            </h2>
+                        </div>
+                        <p class="mt-4 text-slate-600 max-w-lg mx-auto md:mx-0">Di balik persaingan sehat dan konflik sederhana, terjalin sebuah ikatan persahabatan yang saling menguatkan.</p>
+                    </div>
+                    <div class="flex justify-center items-start">
+                         <div class="w-full max-w-sm bg-white p-4 rounded-lg shadow-xl">
+                            <img src="https://placehold.co/600x750/a7f3d0/14532d?text=Foto+Kebersamaan" alt="Foto Kebersamaan Kelas" class="w-full h-full object-cover rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang Kami Section -->
+        <section id="tentang" class="py-20 bg-white">
+             <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-extrabold text-slate-800">Lebih dari Sekadar Kelas</h2>
+                    <p class="text-slate-600 mt-4 leading-relaxed">Manajemen 1A bukan hanya sekumpulan mahasiswa, tapi keluarga yang tumbuh bersama. Kami yakin bahwa perbedaan yang ada dapat menjadi spektrum warna yang memperkaya kanvas kebersamaan, menghasilkan kekuatan unik yang tak tertandingi dalam mencapai tujuan.</p>
+                </div>
+
+                <div class="mt-12 grid sm:grid-cols-3 gap-8">
+                    <!-- Point 1: Solidaritas -->
+                    <div class="text-center p-6">
+                        <div class="bg-emerald-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-users text-3xl text-emerald-600"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 mt-5 text-lg">Solidaritas Tinggi</h3>
+                        <p class="text-sm text-slate-500 mt-2">Kami saling mendukung dalam suka dan duka, memastikan tidak ada yang tertinggal.</p>
+                    </div>
+                     <!-- Point 2: Inovasi -->
+                     <div class="text-center p-6">
+                        <div class="bg-emerald-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-lightbulb text-3xl text-emerald-600"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 mt-5 text-lg">Penuh Inovasi</h3>
+                        <p class="text-sm text-slate-500 mt-2">Selalu mencari cara baru yang kreatif untuk belajar dan menyelesaikan setiap tantangan.</p>
+                    </div>
+                    <!-- Point 3: Kompetitif -->
+                    <div class="text-center p-6">
+                        <div class="bg-emerald-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto">
+                           <i class="fas fa-trophy text-3xl text-emerald-600"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 mt-5 text-lg">Kompetitif</h3>
+                        <p class="text-sm text-slate-500 mt-2">Mendorong satu sama lain untuk menjadi yang terbaik dalam semangat persaingan yang sehat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Jadwal Section -->
+        <section id="jadwal" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-slate-800">Jadwal Kuliah</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto mt-2">Tetap terorganisir dengan jadwal terbaru kami.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+                    <!-- Tombol Tabs -->
+                    <div class="flex justify-center border-b border-slate-200 mb-6">
+                        <button class="tab-button tab-active py-2 px-6 font-semibold rounded-t-md" data-day="senin">Senin</button>
+                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="selasa">Selasa</button>
+                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="rabu">Rabu</button>
+                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="kamis">Kamis</button>
+                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="jumat">Jumat</button>
+                    </div>
+
+                    <!-- Konten Jadwal -->
+                    <div id="schedule-content" class="space-y-4">
+                        <!-- Konten akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Section -->
+        <section id="galeri" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-slate-800">Galeri Kelas</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto mt-2">Beberapa momen spesial yang berhasil kami abadikan.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="col-span-2 row-span-2 rounded-xl overflow-hidden relative group cursor-pointer shadow-lg">
+                        <img src="https://placehold.co/800x800/a7f3d0/14532d?text=Presentasi" alt="Presentasi Kelompok" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-white text-2xl font-bold">Presentasi Kelompok</h3>
+                        </div>
+                    </div>
+                    <div class="col-span-1 rounded-xl overflow-hidden relative group cursor-pointer shadow-lg">
+                        <img src="https://placehold.co/600x600/a7f3d0/14532d?text=Diskusi" alt="Diskusi Seru" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <h3 class="text-white text-lg font-bold">Diskusi Seru</h3>
+                        </div>
+                    </div>
+                    <div class="col-span-1 rounded-xl overflow-hidden relative group cursor-pointer shadow-lg">
+                        <img src="https://placehold.co/600x600/a7f3d0/14532d?text=Acara+Kelas" alt="Acara Kelas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <h3 class="text-white text-lg font-bold">Acara Kelas</h3>
+                        </div>
+                    </div>
+                    <div class="col-span-1 rounded-xl overflow-hidden relative group cursor-pointer shadow-lg">
+                        <img src="https://placehold.co/600x600/a7f3d0/14532d?text=Kelulusan" alt="Kelulusan" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <h3 class="text-white text-lg font-bold">Kelulusan</h3>
+                        </div>
+                    </div>
+                    <div class="col-span-1 rounded-xl bg-emerald-50 flex flex-col items-center justify-center text-center p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-emerald-200">
+                         <i class="fas fa-images text-5xl text-emerald-500 mb-4"></i>
+                        <h3 class="font-bold text-lg text-emerald-800">Lihat Lainnya</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-slate-100">
+            <div class="container mx-auto px-6 py-16">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl font-extrabold text-slate-800">Kenali Tim Kami</h2>
+                    <p class="mt-3 text-slate-600">Lihat profil lengkap dari semua individu hebat yang menjadi bagian dari keluarga Manajemen 1A.</p>
+                    <a href="anggota.html" class="mt-6 inline-block bg-emerald-600 text-white py-3 px-8 rounded-full hover:bg-emerald-700 transition duration-300 shadow-lg hover:shadow-xl text-lg font-semibold transform hover:-translate-y-1">
+                        Lihat Daftar Anggota
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 RIGEL FACHELL LUMIU. Dibuat untuk kebersamaan.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scheduleData = {
+                senin: {
+                    status: "Belajar Santai",
+                    statusColor: "bg-green-100 text-green-800",
+                    courses: [
+                        { name: "Bahasa Indonesia", time: "15:00 - 17:00", room: "D201/202", lecturer: "Nurliani Maulida, M.Pd.", icon: "fas fa-book" }
+                    ]
+                },
+                selasa: {
+                     status: "Jadwal Padat",
+                     statusColor: "bg-yellow-100 text-yellow-800",
+                    courses: [
+                        { name: "Literasi Gen Ai", time: "08:00 - 10:30", room: "A304", lecturer: "Nova Indrayani, S.Kom., M. MT.", icon: "fas fa-robot" },
+                        { name: "Pengantar Akuntansi", time: "10:30 - 13:00", room: "C202", lecturer: "Khadijah Zhafarina Noorendi, S.Ak., M.Ak.", icon: "fas fa-calculator" },
+                        { name: "Pendidikan Agama", time: "13:00 - 15:00", room: "D201/202", lecturer: "Zara Zerina Azizah, S.Pd.I., S.E., M.M.", icon: "fas fa-mosque" }
+                    ]
+                },
+                rabu: {
+                    status: "Belajar Santai",
+                    statusColor: "bg-green-100 text-green-800",
+                    courses: [
+                         { name: "Matematika Bisnis", time: "10:00 - 13:00", room: "D301", lecturer: "Muhammad Eko Wahyu Umaryadi, S.TP., M.M.", icon: "fas fa-square-root-alt" }
+                    ]
+                },
+                kamis: {
+                    status: "Belajar Santai",
+                    statusColor: "bg-green-100 text-green-800",
+                    courses: [
+                        { name: "Pendidikan Kewarganegaraan", time: "10:00 - 12:00", room: "D201/202", lecturer: "Drs. Suprijadi, M.Pd.", icon: "fas fa-flag" }
+                    ]
+                },
+                jumat: {
+                    status: "Hari Produktif",
+                    statusColor: "bg-blue-100 text-blue-800",
+                    courses: [
+                        { name: "Pengantar Manajemen", time: "10:00 - 13:00", room: "B201", lecturer: "Dr. Pudjiati, S.E., M.M.", icon: "fas fa-briefcase" },
+                        { name: "Komunikasi Bisnis", time: "13:00 - 15:30", room: "C203", lecturer: "Musilatin Nikmah, S.Gz., M.M.", icon: "fas fa-comments" }
+                    ]
+                }
+            };
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const scheduleContent = document.getElementById('schedule-content');
+
+            function renderSchedule(day) {
+                const data = scheduleData[day];
+                let content = `<div class="text-right mb-4"><span class="text-sm font-semibold px-3 py-1 rounded-full ${data.statusColor}">${data.status}</span></div>`;
+
+                data.courses.forEach((course, index) => {
+                    const courseColor = index === 0 ? 'bg-emerald-50 border-emerald-600' : 
+                                      index === 1 ? 'bg-emerald-100 border-emerald-500' :
+                                                    'bg-emerald-200 border-emerald-400';
+                    content += `
+                        <div class="p-4 rounded-lg border-l-4 ${courseColor}">
+                            <div class="flex items-center space-x-4">
+                                <i class="${course.icon} text-2xl text-emerald-700"></i>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-slate-800">${course.name}</h4>
+                                    <p class="text-sm text-slate-600">${course.time} | Ruangan: ${course.room}</p>
+                                    <p class="text-sm text-slate-500">Dosen: ${course.lecturer}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                scheduleContent.innerHTML = content;
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('tab-inactive');
+                    });
+                    button.classList.add('tab-active');
+                    button.classList.remove('tab-inactive');
+                    renderSchedule(button.dataset.day);
+                });
+            });
+
+            // Render jadwal default (Senin)
+            renderSchedule('senin');
+        });
+    </script>
+
+</body>
+</html>
+

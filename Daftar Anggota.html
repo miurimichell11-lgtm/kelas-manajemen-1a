@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Anggota - Kelas MANAJEMEN 1A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-aesthetic {
+            font-family: 'Dancing Script', cursive;
+        }
+        /* Style untuk menyembunyikan modal secara default */
+        #memberModal {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-800">MANAJEMEN 1A</a>
+            <a href="index.html" class="bg-emerald-600 text-white py-2 px-4 rounded-full hover:bg-emerald-700 transition duration-300 shadow-sm hover:shadow-md flex items-center space-x-2">
+                <i class="fas fa-arrow-left"></i>
+                <span>Kembali</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Anggota Kelas Section -->
+        <section id="anggota" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-800">Struktur & Anggota Kelas</h1>
+                    <p class="text-slate-600 max-w-2xl mx-auto mt-2">Kenali orang-orang hebat di balik Manajemen 1A.</p>
+                </div>
+
+                <!-- Struktur Inti -->
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl font-bold text-slate-700 mb-8">KETUA TINGKAT</h2>
+                    <div class="flex justify-center">
+                        <!-- Kartu Ketua Kelas -->
+                        <div id="chairman-card" class="bg-emerald-800 rounded-lg shadow-xl hover:scale-105 transition-all duration-300 w-full sm:w-64 overflow-hidden cursor-pointer">
+                           <div class="p-6 text-center">
+                                <div class="relative inline-block mb-4">
+                                    <i class="fas fa-crown text-amber-400 text-4xl absolute -top-6 left-1/2 -translate-x-1/2"></i>
+                                    <img src="https://placehold.co/150x150/34d399/ffffff?text=R" alt="Foto Ketua" class="w-24 h-24 rounded-full mx-auto border-4 border-amber-400">
+                                </div>
+                                <h3 class="text-lg font-bold text-white">Rasya</h3>
+                           </div>
+                           <div class="bg-emerald-200 py-2 mt-2">
+                               <p class="text-emerald-800 font-bold text-sm uppercase tracking-wider">KETUA TINGKAT</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 my-16"></div>
+
+                <!-- Anggota Lainnya -->
+                <div class="text-center mb-12">
+                     <h2 class="text-2xl font-bold text-slate-700">Seluruh Anggota</h2>
+                </div>
+                <div id="member-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
+                    <!-- Kartu anggota akan ditambahkan oleh JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 RIGEL FACHELL LUMIU. Dibuat untuk kebersamaan.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Pop-up -->
+    <div id="memberModal" class="fixed inset-0 bg-black bg-opacity-60 z-[100] items-center justify-center p-4">
+        <div id="modalContent" class="bg-white w-full max-w-md mx-auto rounded-lg shadow-2xl transform transition-all duration-300 scale-95 opacity-0">
+            <!-- Konten Modal akan diisi oleh JavaScript -->
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data Ketua Kelas
+            const chairman = {
+                name: "Rasya",
+                gender: "male", // atau 'female'
+                img: "https://placehold.co/150x150/34d399/ffffff?text=R",
+                namaPanjang: "MUHAMMAD RASYA ARFANDI",
+                nim: "2522196",
+                hobi: "Membaca buku strategi",
+                citaCita: "Menjadi Manajer Proyek",
+                kataKata: "Memimpin adalah melayani.",
+                mediaSosial: [
+                    { platform: "Instagram", username: "@rasya_pratama" },
+                    { platform: "Telegram", username: "Rasya P" }
+                ]
+            };
+
+            // Data Anggota
+            const members = [
+                { name: "RIGEL", gender: "male", img: "https://placehold.co/150x150/14532d/ffffff?text=R", namaPanjang: "RIGEL FACHELL LUMIU", nim: "2522213", hobi: "Atletik", citaCita: "Polisi & Pengusaha Sukses", kataKata: "Redup di dunia maya, Menyala di dunia nyata.", mediaSosial: [{ platform: "Instagram", username: "@famiu._" }, { platform: "TikTok", username: "@rafela_u" }] },
+                { name: "SAPTA", gender: "male", img: "https://placehold.co/150x150/14532d/ffffff?text=S", namaPanjang: "DIVA SAPTA NUGRAHA", nim: "2522203", hobi: "Olahraga", citaCita: "Atlet Profesional", kataKata: "Sehat itu mahal.", mediaSosial: [{ platform: "Instagram", username: "@saptaw" }, { platform: "Telegram", username: "SaptaW" }] },
+                { name: "SYIRA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=S", namaPanjang: "SYIRA AGNES ADISHA", nim: "2522216", hobi: "Menyanyi", citaCita: "Penyanyi", kataKata: "Music is my life.", mediaSosial: [{ platform: "Instagram", username: "@syira.azz" }, { platform: "Telegram", username: "SyiraA" }] },
+                { name: "LIDYA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=L", namaPanjang: "LIDYA ARMELIA RAMADHANI", nim: "2522215", hobi: "Melukis", citaCita: "Seniman", kataKata: "kanvas ku, Dunia ku.", mediaSosial: [{ platform: "Instagram", username: "@lidya.art" }] },
+                { name: "RESTU", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=R", namaPanjang: "Restu Ibu", nim: "240101006", hobi: "Memasak", citaCita: "Chef", kataKata: "Cinta datang dari perut.", mediaSosial: [{ platform: "Instagram", username: "@restu_cooks" }, { platform: "Telegram", username: "Restu I." }] },
+                { name: "GLORIA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=G", namaPanjang: "Gloria Estefan", nim: "240101007", hobi: "Menari", citaCita: "Koreografer", kataKata: "Ikuti iramanya.", mediaSosial: [{ platform: "Instagram", username: "@gloria.e" }] },
+                { name: "ZALFA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=Z", namaPanjang: "Zalfa Putri", nim: "240101008", hobi: "Fotografi", citaCita: "Fotografer", kataKata: "Abadikan momen.", mediaSosial: [{ platform: "Instagram", username: "@zalfa.photo" }, { platform: "Telegram", username: "Zalfa P." }] },
+                { name: "NURUL", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=N", namaPanjang: "Nurul Hidayah", nim: "240101009", hobi: "Menulis", citaCita: "Penulis", kataKata: "Kata adalah senjata.", mediaSosial: [{ platform: "Telegram", username: "Nurul H" }] },
+                { name: "EXIL", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=E", namaPanjang: "Exilia Dwi", nim: "240101010", hobi: "Berkebun", citaCita: "Ahli Botani", kataKata: "Tumbuh bersama alam.", mediaSosial: [{ platform: "Instagram", username: "@exilia.garden" }] },
+                { name: "FILI", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=F", namaPanjang: "Filia Anggraini", nim: "240101011", hobi: "Traveling", citaCita: "Travel Blogger", kataKata: "Jelajahi dunia.", mediaSosial: [{ platform: "Instagram", username: "@fili.travels" }, { platform: "Telegram", username: "Filia A." }] },
+                { name: "SYAFA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=S", namaPanjang: "Syafa Marwah", nim: "240101012", hobi: "Nonton Film", citaCita: "Sutradara", kataKata: "Hidup adalah film.", mediaSosial: [{ platform: "Instagram", username: "@syafa.mov" }] },
+                { name: "NABILA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=N", namaPanjang: "Nabila Putri", nim: "240101013", hobi: "Fashion", citaCita: "Desainer", kataKata: "Gaya adalah segalanya.", mediaSosial: [{ platform: "Instagram", username: "@nabila.style" }] },
+                { name: "MEYMEY", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=M", namaPanjang: "Meymey Chen", nim: "240101014", hobi: "Makan", citaCita: "Kritikus Makanan", kataKata: "Enak!", mediaSosial: [{ platform: "Instagram", username: "@meymey.food" }] },
+                { name: "CINDY", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=C", namaPanjang: "Cindy Claudia", nim: "240101015", hobi: "Tidur", citaCita: "Ahli Tidur", kataKata: "Zzzz...", mediaSosial: [] },
+                { name: "ACA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=A", namaPanjang: "Aca Septriasa", nim: "240101016", hobi: "Belajar", citaCita: "Ilmuwan", kataKata: "Pengetahuan adalah kekuatan.", mediaSosial: [{ platform: "Telegram", username: "Aca S" }] },
+                { name: "SHELLA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=S", namaPanjang: "Shella on 7", nim: "240101017", hobi: "Main musik", citaCita: "Musisi", kataKata: "Nada adalah jiwa.", mediaSosial: [{ platform: "Instagram", username: "@shellaon7" }, { platform: "Telegram", username: "Shella M." }] },
+                { name: "LALA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=L", namaPanjang: "Lala Karmela", nim: "240101018", hobi: "Yoga", citaCita: "Instruktur Yoga", kataKata: "Damai di hati.", mediaSosial: [{ platform: "Instagram", username: "@lala.yoga" }] },
+                { name: "DESY", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=D", namaPanjang: "Desy Ratnasari", nim: "240101019", hobi: "Bersepeda", citaCita: "Juara Tour de France", kataKata: "Terus kayuh.", mediaSosial: [] },
+                { name: "NABILAH", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=N", namaPanjang: "Nabilah Ayu", nim: "240101020", hobi: "Akting", citaCita: "Aktris", kataKata: "Panggung adalah duniaku.", mediaSosial: [{ platform: "Instagram", username: "@nabilah.ayu" }] },
+                { name: "NOVA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=N", namaPanjang: "Nova Eliza", nim: "240101021", hobi: "Membaca Puisi", citaCita: "Pujangga", kataKata: "Indahnya kata.", mediaSosial: [{ platform: "Telegram", username: "Nova E" }] },
+                { name: "MAITSA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=M", namaPanjang: "Maitsa Chantika", nim: "240101022", hobi: "Volly", citaCita: "Atlet Volly", kataKata: "Smash!", mediaSosial: [{ platform: "Instagram", username: "@maitsa.volley" }] },
+                { name: "NAYLA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=N", namaPanjang: "Nayla Purnama", nim: "240101023", hobi: "Berkuda", citaCita: "Joki", kataKata: "Lari kencang.", mediaSosial: [] },
+                { name: "NAJLA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=N", namaPanjang: "Najla Shihab", nim: "240101024", hobi: "Diskusi", citaCita: "Diplomat", kataKata: "Bicara dengan data.", mediaSosial: [{ platform: "Telegram", username: "Najla S" }] },
+                { name: "SELVIA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=S", namaPanjang: "Selvia Ananda", nim: "240101025", hobi: "Bisnis", citaCita: "Pengusaha", kataKata: "Waktu adalah uang.", mediaSosial: [{ platform: "Instagram", username: "@selvia.inc" }] },
+                { name: "REVY", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=R", namaPanjang: "Revy Vamela", nim: "240101026", hobi: "Public Speaking", citaCita: "Motivator", kataKata: "Kamu bisa!", mediaSosial: [] },
+                { name: "RAVEINA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=R", namaPanjang: "Raveina Tandon", nim: "240101027", hobi: "Menyelam", citaCita: "Ahli Biologi Laut", kataKata: "Indahnya bawah laut.", mediaSosial: [{ platform: "Instagram", username: "@raveina.dive" }] },
+                { name: "KHESYA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=K", namaPanjang: "Khesya Ramadhani", nim: "240101028", hobi: "Panjat tebing", citaCita: "Pendaki Gunung", kataKata: "Capai puncaknya.", mediaSosial: [{ platform: "Instagram", username: "@khesya.adv" }] },
+                { name: "HANIS", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=H", namaPanjang: "Hanis Saghara", nim: "240101029", hobi: "Desain Grafis", citaCita: "Art Director", kataKata: "Simpel itu indah.", mediaSosial: [{ platform: "Telegram", username: "Hanis S." }] },
+                { name: "SYIFA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=S", namaPanjang: "Syifa Hadju", nim: "240101030", hobi: "Relawan", citaCita: "Pekerja Sosial", kataKata: "Bantu sesama.", mediaSosial: [{ platform: "Instagram", username: "@syifahadju" }] },
+                { name: "BUNGA", gender: "female", img: "https://placehold.co/150x150/14532d/ffffff?text=B", namaPanjang: "Bunga Citra Lestari", nim: "240101031", hobi: "Investasi", citaCita: "Investor Sukses", kataKata: "Masa depan cerah.", mediaSosial: [{ platform: "Instagram", username: "@bclsinclair" }, { platform: "Telegram", username: "BCL" }] }
+            ];
+
+            const allMembersData = [chairman, ...members];
+            const memberListContainer = document.getElementById('member-list');
+            const chairmanCard = document.getElementById('chairman-card');
+            const modal = document.getElementById('memberModal');
+            const modalContent = document.getElementById('modalContent');
+
+            // Fungsi untuk membuat kartu anggota
+            const createMemberCard = (member) => {
+                const cardBorderColorClass = member.gender === 'male' ? 'border-blue-300' : 'border-pink-300';
+                return `
+                    <div class="member-card flex flex-col bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer" data-name="${member.name}">
+                        <div class="p-4 text-center border-4 ${cardBorderColorClass} rounded-t-lg">
+                            <img src="${member.img}" alt="Foto ${member.name}" class="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-slate-100 object-cover">
+                            <h3 class="text-md font-bold text-slate-800 truncate">${member.name}</h3>
+                        </div>
+                        <div class="bg-emerald-200 py-2 mt-auto text-center">
+                           <p class="text-emerald-800 font-bold text-sm uppercase tracking-wider">MAHASISWA</p>
+                       </div>
+                    </div>
+                `;
+            };
+
+            // Tampilkan kartu anggota
+            if (memberListContainer) {
+                memberListContainer.innerHTML = members.map(createMemberCard).join('');
+            }
+            
+            // Fungsi untuk menampilkan modal
+            const showModal = (memberData) => {
+                let modalHTML = '';
+
+                // Membuat daftar media sosial dengan tata letak rapi
+                const socialList = (memberData.mediaSosial && memberData.mediaSosial.length > 0)
+                    ? memberData.mediaSosial.map(sosmed => {
+                        let iconClass = 'fas fa-globe'; // Default icon
+                        const platform = sosmed.platform.toLowerCase();
+                        if (platform === 'instagram') {
+                            iconClass = 'fab fa-instagram';
+                        } else if (platform === 'telegram') {
+                            iconClass = 'fab fa-telegram';
+                        } else if (platform === 'tiktok') {
+                            iconClass = 'fab fa-tiktok';
+                        }
+                        return `
+                            <li class="flex items-start">
+                                <i class="${iconClass} w-5 text-center mt-1 mr-1"></i>
+                                <span class="font-semibold w-4">-</span>
+                                <span>${sosmed.username} (${sosmed.platform})</span>
+                            </li>`;
+                    }).join('')
+                    : '<li class="flex items-start"><span class="font-semibold w-4">-</span><span>Tidak ada data</span></li>';
+
+                if (memberData.name === chairman.name) {
+                    // Desain Modal untuk Ketua Kelas
+                    modalHTML = `
+                        <div class="bg-emerald-800 text-white rounded-lg overflow-hidden relative">
+                            <button id="closeModal" class="absolute top-2 right-3 text-white text-3xl hover:text-amber-300">&times;</button>
+                            <div class="p-6 text-center">
+                                <i class="fas fa-crown text-amber-400 text-4xl mb-2"></i>
+                                <img src="${memberData.img}" class="w-28 h-28 rounded-full mx-auto border-4 border-amber-400 shadow-lg">
+                                <h3 class="text-2xl font-bold mt-4">${memberData.namaPanjang}</h3>
+                                <p class="text-emerald-300 font-semibold">${memberData.nim}</p>
+                            </div>
+                            <div class="bg-emerald-900/50 px-6 py-4 text-left">
+                                <p class="text-sm font-bold uppercase text-emerald-300">Hobi/Kesukaan</p>
+                                <p>${memberData.hobi}</p>
+                                <p class="text-sm font-bold uppercase text-emerald-300 mt-3">Cita-cita</p>
+                                <p>${memberData.citaCita}</p>
+                                <p class="text-sm font-bold uppercase text-emerald-300 mt-3">Media Sosial</p>
+                                <ul class="space-y-1">${socialList}</ul>
+                            </div>
+                            <div class="bg-emerald-200 p-4 text-center">
+                                <p class="font-aesthetic text-emerald-800 text-2xl">"${memberData.kataKata}"</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Desain Modal untuk Anggota
+                    const borderColor = memberData.gender === 'male' ? 'border-blue-400' : 'border-pink-400';
+                    const photoBorderColor = memberData.gender === 'male' ? 'border-blue-300' : 'border-pink-300';
+                    
+                    modalHTML = `
+                         <div class="bg-emerald-100 rounded-lg overflow-hidden relative border-t-8 ${borderColor}">
+                            <button id="closeModal" class="absolute top-2 right-3 text-slate-400 text-3xl hover:text-slate-600">&times;</button>
+                            <div class="p-6 text-center">
+                                <img src="${memberData.img}" class="w-28 h-28 rounded-full mx-auto border-4 ${photoBorderColor} shadow-lg">
+                                <h3 class="text-2xl font-bold mt-4 text-slate-800">${memberData.namaPanjang}</h3>
+                                <p class="text-slate-600 font-semibold">${memberData.nim}</p>
+                            </div>
+                            <div class="bg-emerald-200 px-6 py-4 text-left rounded-t-lg">
+                                <p class="text-sm font-bold uppercase text-emerald-800">Hobi/Kesukaan</p>
+                                <p class="text-slate-800">${memberData.hobi}</p>
+                                <p class="text-sm font-bold uppercase text-emerald-800 mt-3">Cita-cita</p>
+                                <p class="text-slate-800">${memberData.citaCita}</p>
+                                <p class="text-sm font-bold uppercase text-emerald-800 mt-3">Media Sosial</p>
+                                <ul class="space-y-1 text-slate-800">${socialList}</ul>
+                            </div>
+                            <div class="p-4 text-center mt-2">
+                                <p class="font-aesthetic text-slate-700 text-2xl">"${memberData.kataKata}"</p>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                modalContent.innerHTML = modalHTML;
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                }, 10);
+
+                document.getElementById('closeModal').addEventListener('click', hideModal);
+            };
+
+            const hideModal = () => {
+                modalContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 200);
+            };
+
+            document.querySelectorAll('.member-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const memberName = card.dataset.name;
+                    const memberData = allMembersData.find(m => m.name === memberName);
+                    if(memberData) showModal(memberData);
+                });
+            });
+
+            chairmanCard.addEventListener('click', () => {
+                showModal(chairman);
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
+
