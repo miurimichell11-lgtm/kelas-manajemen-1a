@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album - Diskusi Santai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .photo-grid {
+            display: grid;
+            gap: 0.75rem;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            grid-auto-rows: 120px;
+            grid-auto-flow: dense;
+        }
+        .photo-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .photo-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .grid-col-span-2 { grid-column: span 2; }
+        .grid-row-span-2 { grid-row: span 2; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight">Album MAN 1A</a>
+            <a href="galeri.html" class="bg-emerald-600 text-white py-2 px-5 rounded-full hover:bg-emerald-700 transition duration-300 shadow-sm text-sm font-semibold">
+                <i class="fas fa-arrow-left mr-2"></i>Kembali ke Galeri
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <div class="flex justify-between items-center mb-12">
+            <div>
+                <h1 class="text-4xl font-extrabold text-slate-800">Diskusi Santai</h1>
+                <p class="text-slate-500 mt-2">Obrolan ringan yang justru melahirkan banyak ide.</p>
+            </div>
+            <button id="add-photo-trigger" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-sm text-sm font-semibold">
+                <i class="fas fa-plus mr-2"></i>Tambah Foto
+            </button>
+        </div>
+
+        <form id="add-photo-form" class="hidden mb-8 p-6 bg-white rounded-lg shadow-md border border-slate-200">
+             <h3 class="text-lg font-bold mb-4">Tambahkan Gambar Baru</h3>
+             <div class="flex gap-4">
+                 <input type="url" id="image-url" placeholder="https://contoh.com/gambar.jpg" class="flex-grow p-2 border rounded-md focus:ring-2 focus:ring-blue-500" required>
+                 <button type="submit" class="bg-emerald-600 text-white py-2 px-5 rounded-md hover:bg-emerald-700 font-semibold">Simpan</button>
+             </div>
+             <p class="text-xs text-slate-500 mt-2">Gambar harus sudah di-hosting online. Masukkan URL lengkap di sini.</p>
+        </form>
+
+        <div id="photo-grid-container" class="photo-grid"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageKey = 'diskusi_santai';
+            const localStorageKey = `gallery_${pageKey}`;
+            const adminPassword = 'adm3011051A';
+            const initialPhotos = [
+                'https://placehold.co/800x800/fde047/78350f?text=Ngopi+Bareng',
+                'https://placehold.co/600x800/fde047/78350f?text=Di+Taman+Kampus',
+                'https://placehold.co/600x600/fde047/78350f?text=Obrolan+Sore',
+                'https://placehold.co/600x600/fde047/78350f?text=Sharing+Session'
+            ];
+            const gridContainer = document.getElementById('photo-grid-container');
+            const addPhotoTrigger = document.getElementById('add-photo-trigger');
+            const addPhotoForm = document.getElementById('add-photo-form');
+            const imageUrlInput = document.getElementById('image-url');
+
+            function renderGallery() {
+                const storedPhotos = JSON.parse(localStorage.getItem(localStorageKey)) || [];
+                const allPhotos = [...initialPhotos, ...storedPhotos];
+                gridContainer.innerHTML = '';
+                if (allPhotos.length === 0) {
+                    gridContainer.innerHTML = `<p class="text-slate-500 col-span-full">Belum ada foto di album ini.</p>`;
+                    return;
+                }
+                allPhotos.forEach((url, index) => {
+                    const photoItem = document.createElement('div');
+                    photoItem.className = 'photo-item';
+                    if (index === 0) {
+                        photoItem.classList.add('grid-col-span-2', 'grid-row-span-2');
+                    }
+                    photoItem.innerHTML = `<img src="${url}" alt="Foto ${pageKey} ${index + 1}">`;
+                    gridContainer.appendChild(photoItem);
+                });
+            }
+            addPhotoTrigger.addEventListener('click', () => {
+                const password = prompt('Masukkan kata sandi admin:');
+                if (password === adminPassword) {
+                    addPhotoForm.classList.toggle('hidden');
+                } else if (password) {
+                    alert('Kata sandi salah.');
+                }
+            });
+            addPhotoForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newUrl = imageUrlInput.value.trim();
+                if (newUrl) {
+                    const storedPhotos = JSON.parse(localStorage.getItem(localStorageKey)) || [];
+                    storedPhotos.push(newUrl);
+                    localStorage.setItem(localStorageKey, JSON.stringify(storedPhotos));
+                    imageUrlInput.value = '';
+                    addPhotoForm.classList.add('hidden');
+                    renderGallery();
+                }
+            });
+            renderGallery();
+        });
+    </script>
+</body>
+</html>
+
