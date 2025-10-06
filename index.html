@@ -30,15 +30,36 @@
     <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl md:text-2xl font-extrabold text-slate-800">MANAJEMEN 1A</a>
+            
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#tentang" class="text-slate-600 hover:text-emerald-600 transition duration-300 font-medium">Tentang Kami</a>
                 <a href="#jadwal" class="text-slate-600 hover:text-emerald-600 transition duration-300 font-medium">Jadwal</a>
                 <a href="#galeri" class="text-slate-600 hover:text-emerald-600 transition duration-300 font-medium">Galeri</a>
             </div>
-            <a href="daftar_anggota.html" class="bg-emerald-600 text-white py-2 px-5 rounded-full hover:bg-emerald-700 transition duration-300 shadow-sm hover:shadow-md text-sm font-semibold">
+            <a href="daftar_anggota.html" class="hidden md:inline-block bg-emerald-600 text-white py-2 px-5 rounded-full hover:bg-emerald-700 transition duration-300 shadow-sm hover:shadow-md text-sm font-semibold">
                 Daftar Anggota
             </a>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-slate-800 focus:outline-none" aria-label="Buka menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-6 pt-2 pb-4 space-y-2 border-t border-slate-200">
+                 <a href="#tentang" class="block text-slate-600 hover:text-emerald-600 transition duration-300 font-medium py-2">Tentang Kami</a>
+                 <a href="#jadwal" class="block text-slate-600 hover:text-emerald-600 transition duration-300 font-medium py-2">Jadwal</a>
+                 <a href="#galeri" class="block text-slate-600 hover:text-emerald-600 transition duration-300 font-medium py-2">Galeri</a>
+                 <a href="daftar_anggota.html" class="block bg-emerald-600 text-white text-center mt-2 py-2 px-5 rounded-full hover:bg-emerald-700 transition duration-300 shadow-sm text-sm font-semibold">
+                    Daftar Anggota
+                 </a>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -50,18 +71,18 @@
                         <p class="mb-2 text-slate-600 font-medium">Selamat Datang di Ruang Digital Kami!</p>
                         <div class="flex flex-col">
                              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-800 leading-tight">
-                                <span class="text-emerald-600">SATU KELAS, SEJUTA CERITA...</span>
-                            </h1>
+                                 <span class="text-emerald-600">SATU KELAS, SEJUTA CERITA...</span>
+                             </h1>
                              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-700 mt-2">
-                                MANAJEMEN 1A
-                            </h2>
+                                 MANAJEMEN 1A
+                             </h2>
                         </div>
                         <p class="mt-4 text-slate-600 max-w-lg mx-auto md:mx-0">Di balik persaingan sehat dan konflik sederhana, terjalin sebuah ikatan persahabatan yang saling menguatkan.</p>
                     </div>
                     <div class="flex justify-center items-start">
                          <div class="w-full max-w-sm bg-white p-4 rounded-lg shadow-xl">
                             <img src="https://placehold.co/600x750/a7f3d0/14532d?text=Foto+Kebersamaan" alt="Foto Kebersamaan Kelas" class="w-full h-full object-cover rounded-md">
-                        </div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -112,14 +133,14 @@
                     <p class="text-slate-600 max-w-2xl mx-auto mt-2">Tetap terorganisir dengan jadwal terbaru kami.</p>
                 </div>
 
-                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-2 sm:p-6">
                     <!-- Tombol Tabs -->
-                    <div class="flex justify-center border-b border-slate-200 mb-6">
-                        <button class="tab-button tab-active py-2 px-6 font-semibold rounded-t-md" data-day="senin">Senin</button>
-                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="selasa">Selasa</button>
-                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="rabu">Rabu</button>
-                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="kamis">Kamis</button>
-                        <button class="tab-button tab-inactive py-2 px-6 font-semibold rounded-t-md" data-day="jumat">Jumat</button>
+                    <div class="flex flex-wrap justify-center border-b border-slate-200 mb-6">
+                        <button class="tab-button tab-active py-2 px-4 sm:px-6 font-semibold rounded-t-md text-sm sm:text-base" data-day="senin">Senin</button>
+                        <button class="tab-button tab-inactive py-2 px-4 sm:px-6 font-semibold rounded-t-md text-sm sm:text-base" data-day="selasa">Selasa</button>
+                        <button class="tab-button tab-inactive py-2 px-4 sm:px-6 font-semibold rounded-t-md text-sm sm:text-base" data-day="rabu">Rabu</button>
+                        <button class="tab-button tab-inactive py-2 px-4 sm:px-6 font-semibold rounded-t-md text-sm sm:text-base" data-day="kamis">Kamis</button>
+                        <button class="tab-button tab-inactive py-2 px-4 sm:px-6 font-semibold rounded-t-md text-sm sm:text-base" data-day="jumat">Jumat</button>
                     </div>
 
                     <!-- Konten Jadwal -->
@@ -180,23 +201,97 @@
                 <div class="max-w-2xl mx-auto text-center">
                     <h2 class="text-3xl font-extrabold text-slate-800">Kenali Tim Kami</h2>
                     <p class="mt-3 text-slate-600">Lihat profil lengkap dari semua individu hebat yang menjadi bagian dari keluarga Manajemen 1A.</p>
-<a href="daftar_anggota.html" class="mt-6 inline-block bg-emerald-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-emerald-700 transition duration-300 shadow-lg flex items-center justify-center space-x-2 mx-auto max-w-xs">
- <i class="fas fa-arrow-right mr-2"></i><span>Lihat Daftar Anggota</span>   
-    </a>
+                    <a href="daftar_anggota.html" class="mt-6 inline-flex items-center justify-center bg-emerald-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-emerald-700 transition duration-300 shadow-lg">
+                        <i class="fas fa-users mr-2"></i>
+                        <span>Lihat Daftar Anggota</span>
+                    </a>
+                </div>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 RIGEL FACHELL LUMIU. Dibuat untuk kebersamaan.</p>
+    <footer class="bg-slate-800 text-slate-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About the Class -->
+                <div class="col-span-2 md:col-span-2 lg:col-span-1">
+                    <h3 class="text-lg font-bold text-white mb-4">MANAJEMEN 1A</h3>
+                    <p class="text-sm">Sebuah ruang digital untuk berbagi cerita, jadwal, dan kenangan dari keluarga besar Manajemen 1A.</p>
+                    <div class="flex space-x-4 mt-4 text-sm">
+                        <a href="https://www.instagram.com/man1a_um/" target="_blank" aria-label="Instagram Kelas" class="flex items-center text-slate-300 hover:text-emerald-400 transition-colors">
+                            <i class="fab fa-instagram fa-fw mr-2"></i>
+                            <span>@man1a_um</span>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Column 2: Campus Information -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Informasi Kampus</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fas fa-university fa-fw mr-3 mt-1 text-emerald-400"></i><span>Universitas Mulia Balikpapan</span></li>
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt fa-fw mr-3 mt-1 text-emerald-400"></i><span>Jl. Letjend TNI. Z.A Maulani No. 9, Damai Bahagia, Kota Balikpapan, Kalimantan Timur 76114</span></li>
+                        <li class="flex items-start"><i class="fas fa-phone fa-fw mr-3 mt-1 text-emerald-400"></i><span>Telp: (0542) 766766</span></li>
+                        <li class="flex items-start"><i class="fas fa-fax fa-fw mr-3 mt-1 text-emerald-400"></i><span>Fax: (0542) 766766</span></li>
+                        <li class="flex items-start"><i class="fas fa-envelope fa-fw mr-3 mt-1 text-emerald-400"></i><span>info@universitasmulia.ac.id</span></li>
+                        <li class="flex items-start"><a href="https://www.instagram.com/universitasmulia/" target="_blank" class="flex items-start hover:text-emerald-400 transition-colors"><i class="fab fa-instagram fa-fw mr-3 mt-1 text-emerald-400"></i><span>@universitasmulia</span></a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3: Developer Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Hubungi Developer</h3>
+                     <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fas fa-user fa-fw mr-3 mt-1 text-emerald-400"></i><span>RIGEL FACHELL LUMIU</span></li>
+                        <li class="flex items-start"><a href="https://wa.me/6285652168007" target="_blank" class="flex items-start hover:text-emerald-400 transition-colors"><i class="fab fa-whatsapp fa-fw mr-3 mt-1 text-emerald-400"></i><span>+62 856-5216-8007</span></a></li>
+                        <li class="flex items-start"><a href="mailto:rigel.fachell@example.com" class="flex items-start hover:text-emerald-400 transition-colors"><i class="fas fa-envelope fa-fw mr-3 mt-1 text-emerald-400"></i><span>rigel.fachell@example.com</span></a></li>
+                        <li class="flex items-start"><a href="https://www.tiktok.com/@rafela_u" target="_blank" class="flex items-start hover:text-emerald-400 transition-colors"><i class="fab fa-tiktok fa-fw mr-3 mt-1 text-emerald-400"></i><span>@rafela_u</span></a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm text-slate-400">
+                <p>&copy; 2025 RIGEL FACHELL LUMIU. Dibuat untuk kebersamaan.</p>
+            </div>
         </div>
     </footer>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // --- Mobile Menu Toggle ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = menuBtn.querySelector('i');
+                // Change icon to X when menu is open
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    menuBtn.setAttribute('aria-label', 'Buka menu');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    menuBtn.setAttribute('aria-label', 'Tutup menu');
+                }
+            });
+
+            // Close menu when a link is clicked
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    menuBtn.setAttribute('aria-label', 'Buka menu');
+                });
+            });
+
+
+            // --- Schedule Tabs ---
             const scheduleData = {
                 senin: {
                     status: "Belajar Santai",
@@ -243,25 +338,34 @@
 
             function renderSchedule(day) {
                 const data = scheduleData[day];
+                if (!data) return;
+
                 let content = `<div class="text-right mb-4"><span class="text-sm font-semibold px-3 py-1 rounded-full ${data.statusColor}">${data.status}</span></div>`;
 
-                data.courses.forEach((course, index) => {
-                    const courseColor = index === 0 ? 'bg-emerald-50 border-emerald-600' : 
-                                      index === 1 ? 'bg-emerald-100 border-emerald-500' :
-                                                    'bg-emerald-200 border-emerald-400';
-                    content += `
-                        <div class="p-4 rounded-lg border-l-4 ${courseColor}">
-                            <div class="flex items-center space-x-4">
-                                <i class="${course.icon} text-2xl text-emerald-700"></i>
-                                <div class="flex-1">
-                                    <h4 class="font-bold text-slate-800">${course.name}</h4>
-                                    <p class="text-sm text-slate-600">${course.time} | Ruangan: ${course.room}</p>
-                                    <p class="text-sm text-slate-500">Dosen: ${course.lecturer}</p>
+                if (data.courses.length === 0) {
+                    content += `<div class="text-center p-8 bg-slate-50 rounded-lg">
+                        <i class="fas fa-calendar-times text-4xl text-slate-400 mb-3"></i>
+                        <p class="text-slate-500 font-medium">Tidak ada jadwal kuliah hari ini. Waktunya istirahat!</p>
+                    </div>`;
+                } else {
+                    data.courses.forEach((course, index) => {
+                        const courseColor = index % 3 === 0 ? 'bg-emerald-50 border-emerald-600' : 
+                                            index % 3 === 1 ? 'bg-emerald-100 border-emerald-500' :
+                                                              'bg-emerald-200 border-emerald-400';
+                        content += `
+                            <div class="p-4 rounded-lg border-l-4 ${courseColor}">
+                                <div class="flex items-start sm:items-center space-x-4">
+                                    <i class="${course.icon} text-xl sm:text-2xl text-emerald-700 w-8 text-center"></i>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-slate-800">${course.name}</h4>
+                                        <p class="text-sm text-slate-600">${course.time} | Ruangan: ${course.room}</p>
+                                        <p class="text-sm text-slate-500 mt-1">Dosen: ${course.lecturer}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `;
-                });
+                        `;
+                    });
+                }
                 scheduleContent.innerHTML = content;
             }
 
@@ -277,13 +381,14 @@
                 });
             });
 
-            // Render jadwal default (Senin)
+            // Render default schedule (Monday)
             renderSchedule('senin');
         });
     </script>
 
 </body>
 </html>
+
 
 
 
